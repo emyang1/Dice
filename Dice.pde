@@ -49,10 +49,11 @@ class Dice {
     }
   }
 }
-
+PImage img;
 void setup() {
   size(430, 470);
   noLoop();
+  img = loadImage("entwurf.png");
 }
 Dice yay;
 
@@ -67,7 +68,17 @@ void draw() {
     }
   }
   fill(0);
-  text("sum = " + sum, 190, 450);
+  textSize(13);
+  text("sum = " + sum, 180, 450);
+  if(sum >= 185){
+    image(img, 82, 35, width/1.6, height/1.3);
+    fill(145, 190, 230);
+    noStroke();
+    rect(50, 430, 300, 460);
+    fill(0);
+    textSize(15);
+    text("BOO I promise the song in the footer is good", 45, 450);
+  }
 }
 
 void mousePressed() {
